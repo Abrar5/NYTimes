@@ -13,7 +13,7 @@ struct ArticleView: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack(alignment: .center, spacing: 8) {
-                if let url = article.thumbnailURL {
+                if article.thumbnailURL != nil {
                     image
                 }
                 title

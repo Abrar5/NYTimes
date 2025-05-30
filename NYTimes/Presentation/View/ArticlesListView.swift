@@ -29,7 +29,7 @@ struct ArticleListView: View {
         }
     }
     
-    var errorView: some View {
+    private var errorView: some View {
         VStack {
             if let errorMessage = viewModel.errorMessage {
                 Text("Error: \(errorMessage)")
