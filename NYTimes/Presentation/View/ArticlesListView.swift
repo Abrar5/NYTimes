@@ -27,6 +27,10 @@ struct ArticleListView: View {
                 viewModel.fetchArticles(period: $viewModel.selectedNumber.wrappedValue)
             }
         }
+        .onChange(of: viewModel.selectedNumber) { _, newValue in
+            viewModel.shouldClearCache = true
+            viewModel.fetchArticles(period: newValue)
+        }
     }
     
     private var errorView: some View {
@@ -45,8 +49,11 @@ struct ArticleListView: View {
             .multilineTextAlignment(.center)
     }
     
-        VStack {
     private var articlesList: some View {
+        VStack(spacing: 8) {
+            PickerView(selectedValue: $viewModel.selectedNumber, numberOptions: viewModel.numberOptions)
+                .padding(.horizontal)
+            
             List(viewModel.articles, id: \.id) { article in
                 NavigationLink(destination: ArticleDetailsView(article: article)) {
                     ArticleView(article: article)

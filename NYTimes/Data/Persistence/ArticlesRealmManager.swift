@@ -36,4 +36,20 @@ class ArticlesRealmManager {
             }
         }
     }
+    
+    func clearAllCachedArticles() async {
+        Task.detached(priority: .background) {
+            do {
+                let realm = try Realm()
+                let allArticles = realm.objects(ArticleObject.self)
+                
+                try realm.write {
+                    realm.delete(allArticles)
+                }
+            } catch {
+                print("Failed to clear cache: \(error)")
+            }
+        }
+    }
+
 }

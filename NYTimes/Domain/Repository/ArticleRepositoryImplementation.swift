@@ -17,14 +17,14 @@ class ArticleRepositoryImplementation: ArticleRepository {
     }
 
     func fetchMostPopularArticles(period: Int) async throws -> [ArticleEntity] {
-        let cachedArticle = await self.cache.load()
-        if cachedArticle.isEmpty {
+        let cachedArticles = await self.cache.load()
+        if cachedArticles.isEmpty {
             let result = try await apiService.getMostPopularArticles(period: period)
             let articles = result.map { $0.toDomain() }
             let cachedObject = articles.map { ArticleObject(article: $0) }
             self.cache.save(articles: cachedObject)
             return articles
         }
-        return cachedArticle
+        return cachedArticles
     }
 }
