@@ -7,7 +7,6 @@
 
 import Foundation
 
-@MainActor
 class ArticlesListViewModel: ObservableObject {
     @Published var articles: [ArticleEntity] = []
     @Published var errorMessage: String?
@@ -18,6 +17,7 @@ class ArticlesListViewModel: ObservableObject {
         self.fetchUseCase = FetchMostPopularArticlesUseCase(repository: ArticleRepositoryImplementation())
     }
 
+    @MainActor
     func fetchArticles(period: Int = 7) {
         Task {
             do {
