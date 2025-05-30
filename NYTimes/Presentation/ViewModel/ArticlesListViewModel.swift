@@ -34,11 +34,11 @@ class ArticlesListViewModel: ObservableObject {
         formatter.dateFormat = "dd-MM-yyyy"
         
         return articles.sorted {
-            guard let date1 = formatter.date(from: $0.publishedDate),
-                  let date2 = formatter.date(from: $1.publishedDate) else {
+            guard let firstDate = formatter.date(from: $0.publishedDate),
+                  let secondDate = formatter.date(from: $1.publishedDate) else {
                 return false
             }
-            return date1 > date2
+            return firstDate > secondDate
         }
     }
 }
