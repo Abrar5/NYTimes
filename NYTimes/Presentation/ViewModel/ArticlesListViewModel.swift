@@ -10,18 +10,14 @@ import Foundation
 class ArticlesListViewModel: ObservableObject {
     @Published var articles: [ArticleEntity] = []
     @Published var errorMessage: String?
-
-    private let fetchUseCase: FetchMostPopularArticlesUseCase
-
-    init() {
-        self.fetchUseCase = FetchMostPopularArticlesUseCase(repository: ArticleRepositoryImplementation())
-    }
+    @Published var selectedNumber: Int = 7
 
     @MainActor
     func fetchArticles(period: Int = 7) {
         Task {
             do {
-                let articlesList = try await self.fetchUseCase.execute(period: period)
+                let fetchUseCase = FetchMostPopularArticlesUseCase(repository: ArticleRepositoryImplementation())
+                let articlesList = try await fetchUseCase.execute(period: period)
                 self.articles = getSortArticlesByDate(articlesList)
             } catch {
                 self.errorMessage = error.localizedDescription

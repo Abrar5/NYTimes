@@ -23,7 +23,7 @@ struct ArticleListView: View {
             }
             .navigationTitle("NY Times Most Popular Articles")
             .onAppear {
-                viewModel.fetchArticles(period: viewModel.selectedNumber)
+                viewModel.fetchArticles(period: $viewModel.selectedNumber.wrappedValue)
             }
         }
     }
