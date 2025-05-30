@@ -13,10 +13,10 @@ final class ArticlesListViewModelTests: XCTestCase {
     var articles: [ArticleEntity] = []
     
     override func setUp() {
+        super.setUp()
         sut = ArticlesListViewModel()
         let results = StubGenerator().stubArticleNews().results ?? []
         articles = results.map{ $0.toDomain()}
-        super.setUp()
     }
     
     override func tearDown() {
@@ -31,7 +31,7 @@ final class ArticlesListViewModelTests: XCTestCase {
         expect.fulfill()
     }
     
-    func testgetSortArticlesByDate() {
+    func testGetSortArticlesByDate() {
         let expect = XCTestExpectation(description: "Get Sorted Articles By Date")
         let result = sut.getSortArticlesByDate(articles)
         
