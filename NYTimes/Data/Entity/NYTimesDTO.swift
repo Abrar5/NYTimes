@@ -123,10 +123,10 @@ enum ResultType: String, Codable {
 }
 
 extension ResultDTO {
-    func toDomainModel() -> Article {
+    func toDomain() -> ArticleEntity {
         let thumbnail = media?.first?.mediaMetadata?.first(where: { $0.format == .standardThumbnail })?.url
         
-        return Article(
+        return ArticleEntity(
             id: id ?? 0,
             title: title ?? "",
             abstract: abstract ?? "",

@@ -9,7 +9,7 @@ import Foundation
 
 @MainActor
 class ArticlesListViewModel: ObservableObject {
-    @Published var articles: [Article] = []
+    @Published var articles: [ArticleEntity] = []
     @Published var errorMessage: String?
 
     private let fetchUseCase: FetchMostPopularArticlesUseCase
@@ -29,7 +29,7 @@ class ArticlesListViewModel: ObservableObject {
         }
     }
     
-    func getSortArticlesByDate(_ articles: [Article]) -> [Article] {
+    func getSortArticlesByDate(_ articles: [ArticleEntity]) -> [ArticleEntity] {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd-MM-yyyy"
         

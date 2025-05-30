@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ArticleDetailsView: View {
-    let article: Article
+    let article: ArticleEntity
     
     var body: some View {
         ScrollView {
