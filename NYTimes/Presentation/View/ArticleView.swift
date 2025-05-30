@@ -37,7 +37,7 @@ struct ArticleView: View {
                             .frame(width: 80, height: 80)
                             .clipShape(Circle())
                     case .failure:
-                        Image(systemName: "photo")
+                        Image(systemName: "photo.circle")
                             .resizable()
                             .frame(width: 80, height: 80)
                             .foregroundColor(.gray)
