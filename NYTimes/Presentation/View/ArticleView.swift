@@ -13,7 +13,9 @@ struct ArticleView: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack(alignment: .center, spacing: 8) {
-                image
+                if let url = article.thumbnailURL {
+                    image
+                }
                 title
             }
             VStack(alignment: .leading) {
@@ -21,7 +23,6 @@ struct ArticleView: View {
                 date
             }
         }
-        .padding(.horizontal, 8)
     }
     
     private var image: some View {

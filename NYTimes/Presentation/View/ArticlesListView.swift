@@ -13,7 +13,7 @@ struct ArticleListView: View {
     var body: some View {
         NavigationView {
             VStack {
-                if let errorMessage = viewModel.errorMessage {
+                if viewModel.errorMessage != nil {
                     errorView
                 } else if viewModel.articles.isEmpty {
                     progressView
@@ -21,6 +21,7 @@ struct ArticleListView: View {
                     articlesList
                 }
             }
+            .padding(.horizontal, 8)
             .navigationTitle("NY Times Most Popular Articles")
             .onAppear {
                 viewModel.fetchArticles(period: $viewModel.selectedNumber.wrappedValue)
@@ -34,20 +35,18 @@ struct ArticleListView: View {
                 Text("Error: \(errorMessage)")
                     .foregroundColor(.red)
                     .multilineTextAlignment(.center)
-                    .padding()
             }
         }
     }
     
-    var progressView: some View {
-        ProgressView("Loading articles...")
+    private var progressView: some View {
+        ProgressView("Loading Articles...")
             .foregroundColor(.black)
             .multilineTextAlignment(.center)
-            .padding()
     }
     
-    var articlesList: some View {
         VStack {
+    private var articlesList: some View {
             List(viewModel.articles, id: \.id) { article in
                 NavigationLink(destination: ArticleDetailsView(article: article)) {
                     ArticleView(article: article)
