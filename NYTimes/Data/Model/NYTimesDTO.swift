@@ -101,9 +101,9 @@ struct MediaMetadatum: Codable {
 }
 
 enum Format: String, Codable {
-    case mediumThreeByTwo210 = "mediumThreeByTwo210"
-    case mediumThreeByTwo440 = "mediumThreeByTwo440"
-    case standardThumbnail = "Standard Thumbnail"
+    case medium = "mediumThreeByTwo210"
+    case large = "mediumThreeByTwo440"
+    case standard = "Standard Thumbnail"
 }
 
 enum Subtype: String, Codable {
@@ -124,7 +124,7 @@ enum ResultType: String, Codable {
 
 extension ResultDTO {
     func toDomain() -> ArticleEntity {
-        let thumbnail = media?.first?.mediaMetadata?.first(where: { $0.format == .standardThumbnail })?.url
+        let thumbnail = media?.first?.mediaMetadata?.first(where: { $0.format == .medium })?.url
         
         return ArticleEntity(
             id: id ?? 0,
