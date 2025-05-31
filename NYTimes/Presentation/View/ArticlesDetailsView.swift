@@ -40,11 +40,11 @@ struct ArticleDetailsView: View {
         .navigationTitle(article.title)
     }
     
-        private var title: some View {
-            Text(article.title)
-                .font(.title)
-                .bold()
-        }
+    private var title: some View {
+        Text(article.title)
+            .font(.title)
+            .bold()
+    }
     
     private var authors: some View {
         Text(article.authors ?? "")
