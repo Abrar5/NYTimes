@@ -8,19 +8,19 @@
 import Foundation
 
 class ArticleRepositoryImplementation: ArticleRepository {
-    private let apiService: NYTAPIService
+    private let apiService: DefaultAPIService
     private let cache: ArticlesRealmManager
 
-    init(apiService: NYTAPIService = NYTAPIServiceImplementation(), cache: ArticlesRealmManager = ArticlesRealmManager()) {
+    init(apiService: DefaultAPIService = DefaultAPIService(), cache: ArticlesRealmManager = ArticlesRealmManager()) {
         self.apiService = apiService
         self.cache = cache
     }
 
-    func fetchMostPopularArticles(period: Int) async throws -> [ArticleEntity] {
+    func fetchMostViewedArticles(period: Int) async throws -> [ArticleEntity] {
         let cachedArticles = await self.cache.load()
         if cachedArticles.isEmpty {
-            let result = try await apiService.getMostPopularArticles(period: period)
-            let articles = result.map { $0.toDomain() }
+            let result = try await apiService.request(.getMostViewedArticles(days: period), responseType: NYTimesDTO.self)
+            let articles = result.results?.map { $0.toDomain() } ?? []
             let cachedObject = articles.map { ArticleObject(article: $0) }
             self.cache.save(articles: cachedObject)
             return articles

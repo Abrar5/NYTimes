@@ -42,7 +42,6 @@ class ArticlesRealmManager {
             do {
                 let realm = try Realm()
                 let allArticles = realm.objects(ArticleObject.self)
-                
                 try realm.write {
                     realm.delete(allArticles)
                 }
@@ -51,5 +50,4 @@ class ArticlesRealmManager {
             }
         }
     }
-
 }

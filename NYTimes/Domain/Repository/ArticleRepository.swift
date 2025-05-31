@@ -8,5 +8,5 @@
 import Foundation
 
 protocol ArticleRepository {
-    func fetchMostPopularArticles(period: Int) async throws -> [ArticleEntity]
+    func fetchMostViewedArticles(period: Int) async throws -> [ArticleEntity]
 }

@@ -15,7 +15,7 @@ class FetchMostPopularArticlesUseCase {
     }
 
     func execute(period: Int = 7) async throws -> [ArticleEntity] {
-        return try await repository.fetchMostPopularArticles(period: period)
+        return try await repository.fetchMostViewedArticles(period: period)
     }
 }
 
