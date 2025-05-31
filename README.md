@@ -16,6 +16,17 @@
   - Clean Architecture and MVVM pattern.
 
 # Screenshots:
+  - List View:
+    
+    <img src="NYTimes/Assets.xcassets/OutputScreenshots/ListView.imageset/ListView.png" alt="List View" width="300"/>
+
+  - Details View:
+  
+  <img src="NYTimes/Assets.xcassets/OutputScreenshots/DetailsView.imageset/DetailsView.png" alt="Details View" width="300"/>
+
+
+
+
 
 
 
