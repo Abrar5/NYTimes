@@ -27,14 +27,4 @@ class ArticleObject: Object {
         self.authors = article.authors
         self.thumbnailURL = article.thumbnailURL
     }
-    
-    func toDomain() -> ArticleEntity {
-        ArticleEntity(id: id,
-                title: title,
-                abstract: abstract,
-                url: url,
-                authors: authors,
-                publishedDate: publishedDate,
-                thumbnailURL: thumbnailURL)
-    }
 }

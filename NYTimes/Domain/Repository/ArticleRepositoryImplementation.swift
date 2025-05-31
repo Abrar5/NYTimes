@@ -20,7 +20,7 @@ class ArticleRepositoryImplementation: ArticleRepository {
         let cachedArticles = await self.cache.load()
         if cachedArticles.isEmpty {
             let result = try await apiService.request(.getMostViewedArticles(days: period), responseType: NYTimesDTO.self)
-            let articles = result.results?.map { $0.toDomain() } ?? []
+            let articles = result.results?.map { ArticleMapper().map(dto: $0) } ?? []
             let cachedObject = articles.map { ArticleObject(article: $0) }
             self.cache.save(articles: cachedObject)
             return articles

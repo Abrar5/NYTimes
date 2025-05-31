@@ -20,7 +20,8 @@ final class NYTimesTests: XCTestCase {
         let results = StubGenerator().stubArticleNews().results ?? []
         XCTAssertNotNil(results)
 
-        let articles = results.map{ $0.toDomain()}
+        let articles = results.map { ArticleMapper().map(dto: $0) } 
+
         XCTAssertNotNil(articles)
         
         XCTAssertEqual(articles.count, results.count)

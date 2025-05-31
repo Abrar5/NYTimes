@@ -28,7 +28,7 @@ class ArticlesRealmManager {
                 do {
                     let realm = try Realm()
                     let result = realm.objects(ArticleObject.self)
-                    let articles = result.map { $0.toDomain() }
+                    let articles = result.map { ArticleObjectMapper().map(object: $0) }
                     continuation.resume(returning: Array(articles))
                 } catch {
                     print("Failed to load from Realm:", error)

@@ -16,7 +16,7 @@ final class ArticlesListViewModelTests: XCTestCase {
         super.setUp()
         sut = ArticlesListViewModel()
         let results = StubGenerator().stubArticleNews().results ?? []
-        articles = results.map{ $0.toDomain()}
+        articles = results.map { ArticleMapper().map(dto: $0) }
     }
     
     override func tearDown() {
