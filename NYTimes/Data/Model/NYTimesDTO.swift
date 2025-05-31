@@ -28,7 +28,7 @@ struct ResultDTO: Codable {
     let url: String?
     let id: Int?
     let assetID: Int?
-    let source: Source?
+    let source: String?
     let publishedDate: String?
     let updated: String?
     let section: String?
@@ -36,7 +36,7 @@ struct ResultDTO: Codable {
     let nytdsection: String?
     let adxKeywords: String?
     let byline: String?
-    let type: ResultType?
+    let type: String?
     let title: String?
     let abstract: String?
     let desFacet: [String]?
@@ -73,8 +73,8 @@ struct ResultDTO: Codable {
 
 // MARK: - Media
 struct Media: Codable {
-    let type: MediaType?
-    let subtype: Subtype?
+    let type: String?
+    let subtype: String?
     let caption: String?
     let copyright: String?
     let approvedForSyndication: Int?
@@ -102,36 +102,4 @@ enum Format: String, Codable {
     case medium = "mediumThreeByTwo210"
     case large = "mediumThreeByTwo440"
     case standard = "Standard Thumbnail"
-}
-
-enum Subtype: String, Codable {
-    case photo = "photo"
-}
-
-enum MediaType: String, Codable {
-    case image = "image"
-}
-
-enum Source: String, Codable {
-    case newYorkTimes = "New York Times"
-}
-
-enum ResultType: String, Codable {
-    case article = "Article"
-}
-
-extension ResultDTO {
-    func toDomain() -> ArticleEntity {
-        let thumbnail = media?.first?.mediaMetadata?.first(where: { $0.format == .medium })?.url
-        
-        return ArticleEntity(
-            id: id ?? 0,
-            title: title ?? "",
-            abstract: abstract ?? "",
-            url: url ?? "",
-            authors: byline,
-            publishedDate: publishedDate?.formatDate() ?? "",
-            thumbnailURL: thumbnail
-        )
-    }
 }
