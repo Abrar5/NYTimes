@@ -13,7 +13,10 @@ protocol APIService {
 
 final class DefaultAPIService: APIService {
     func request<T: Decodable>(_ endpoint: ArticlesTarget, responseType: T.Type) async throws -> T {
-        var urlComponents = URLComponents(string: endpoint.baseURL + endpoint.path)!
+        guard var urlComponents = URLComponents(string: endpoint.baseURL + endpoint.path) else {
+            throw URLError(.badURL)
+        }
+        
         urlComponents.queryItems = endpoint.urlComponents.queryItems
         
         guard let url = urlComponents.url else {
