@@ -35,7 +35,6 @@ struct ResultDTO: Codable {
     let subsection: String?
     let nytdsection: String?
     let adxKeywords: String?
-//    let column: JSONNull?
     let byline: String?
     let type: ResultType?
     let title: String?
@@ -59,7 +58,6 @@ struct ResultDTO: Codable {
         case subsection
         case nytdsection
         case adxKeywords = "adx_keywords"
-//        case column
         case byline
         case type
         case title
