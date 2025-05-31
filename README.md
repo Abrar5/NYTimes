@@ -3,6 +3,7 @@
   - Display articles in a list with image, title, author/s, and date.
   - Tap an article to view details.
   - Text-to-speech (TTS) functionality in the article details.
+  - Navigate to the website to read the whole articles.
   - Local caching with Realm.
   - Unit tests for core logic.
 
