@@ -22,7 +22,7 @@ struct ArticleListView: View {
                 }
             }
             .padding(.horizontal, 8)
-            .navigationTitle("NY Times Most Popular Articles")
+            .navigationTitle("Most Viewed Articles")
             .onAppear {
                 viewModel.fetchArticles(period: $viewModel.selectedNumber.wrappedValue)
             }
