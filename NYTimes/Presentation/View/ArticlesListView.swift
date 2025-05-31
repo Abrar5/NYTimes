@@ -60,6 +60,6 @@ struct ArticleListView: View {
                 }
             }
         }
-        .listStyle(PlainListStyle())
+        .listStyle(.plain)
     }
 }
