@@ -23,11 +23,4 @@
 
   - Details View:
   
-  <img src="NYTimes/Assets.xcassets/OutputScreenshots/DetailsView.imageset/DetailsView.png" alt="Details View" width="300"/>
-
-
-
-
-
-
-
+    <img src="NYTimes/Assets.xcassets/OutputScreenshots/DetailsView.imageset/DetailsView.png" alt="Details View" width="300"/>
