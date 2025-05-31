@@ -49,7 +49,6 @@ class ArticlesListViewModel: ObservableObject {
 
 // MARK: - Reading Text
 extension ArticlesListViewModel {
-    
     func readText(_ text: String) {
         if speechSynthesizer.isPaused {
             resumeSpeaking()
