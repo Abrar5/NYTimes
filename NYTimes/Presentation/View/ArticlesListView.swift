@@ -55,7 +55,7 @@ struct ArticleListView: View {
                 .padding(.horizontal)
             
             List(viewModel.articles, id: \.id) { article in
-                NavigationLink(destination: ArticleDetailsView(article: article)) {
+                NavigationLink(destination: ArticleDetailsView(article: article).environmentObject(viewModel)) {
                     ArticleView(article: article)
                 }
             }

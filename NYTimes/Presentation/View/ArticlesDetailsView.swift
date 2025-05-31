@@ -8,7 +8,12 @@
 import SwiftUI
 
 struct ArticleDetailsView: View {
-    let article: ArticleEntity
+    private var article: ArticleEntity
+    @EnvironmentObject private var viewModel: ArticlesListViewModel
+    
+    init(article: ArticleEntity) {
+        self.article = article
+    }
     
     var body: some View {
         ScrollView {
@@ -17,6 +22,10 @@ struct ArticleDetailsView: View {
                 authors
                 date
                 Divider()
+                Image(systemName: "speaker")
+                    .onTapGesture {
+                        viewModel.readText(article.abstract)
+                    }
                 description
                 
                 Link("Read full article", destination: URL(string: article.url)!)
