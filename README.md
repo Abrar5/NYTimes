@@ -4,7 +4,7 @@
   - Tap an article to view details.
   - Text-to-speech (TTS) functionality in the article details.
   - Navigate to the website to read the whole articles.
-  - Local caching with Realm.
+  - Local caching with Realm (the cache is valid for 1 day).
   - Unit tests for core logic.
 
 # Requirements:
