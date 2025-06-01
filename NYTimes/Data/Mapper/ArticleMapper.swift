@@ -5,6 +5,8 @@
 //  Created by Abrar on 31/05/2025.
 //
 
+import Foundation
+
 class ArticleMapper {
     func map(dto: ResultDTO) -> ArticleEntity {
         let thumbnail = dto.media?.first?.mediaMetadata?.first(where: { $0.format == .medium })?.url
@@ -16,7 +18,8 @@ class ArticleMapper {
             url: dto.url ?? "",
             authors: dto.byline,
             publishedDate: dto.publishedDate?.formatDate() ?? "",
-            thumbnailURL: thumbnail
+            thumbnailURL: thumbnail,
+            savedDate: Date()
         )
     }
 }

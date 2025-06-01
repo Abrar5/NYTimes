@@ -16,6 +16,7 @@ class ArticleObject: Object {
     @Persisted var url: String
     @Persisted var authors: String?
     @Persisted var thumbnailURL: String?
+    @Persisted var savedDate: Date?
     
     convenience init(article: ArticleEntity) {
         self.init()
@@ -26,5 +27,6 @@ class ArticleObject: Object {
         self.url = article.url
         self.authors = article.authors
         self.thumbnailURL = article.thumbnailURL
+        self.savedDate = article.savedDate
     }
 }

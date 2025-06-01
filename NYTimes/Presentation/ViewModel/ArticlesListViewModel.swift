@@ -12,24 +12,35 @@ class ArticlesListViewModel: ObservableObject {
     @Published var articles: [ArticleEntity] = []
     @Published var errorMessage: String?
     @Published var selectedNumber: Int = 7
-    @Published var numberOptions: [Int] = [1,7,30]
+    @Published var numberOptions: [Int] = [1, 7, 30]
     var shouldClearCache: Bool = false
     private var speechSynthesizer = AVSpeechSynthesizer()
     private var currentUtterance: AVSpeechUtterance?
     
     @MainActor
-    func fetchArticles(period: Int = 7) {
+    private func getArticles(period: Int = 7) {
         Task {
             do {
-                if shouldClearCache {
-                    await ArticlesRealmManager().clearAllCachedArticles()
-                }
                 let fetchUseCase = FetchMostPopularArticlesUseCase(repository: ArticleRepositoryImplementation())
                 let articlesList = try await fetchUseCase.execute(period: period)
                 self.articles = getSortArticlesByDate(articlesList)
             } catch {
                 self.errorMessage = error.localizedDescription
             }
+        }
+    }
+
+    @MainActor
+    func fetchArticles(period: Int = 7) {
+        if shouldClearCache {
+            ArticlesRealmManager().clearAllCachedArticles() {
+                self.shouldClearCache = false
+                self.getArticles(period: period)
+                return
+            }
+        } else {
+            getArticles(period: period)
+            return
         }
     }
     

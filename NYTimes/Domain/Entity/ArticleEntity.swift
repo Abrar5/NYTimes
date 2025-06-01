@@ -5,6 +5,8 @@
 //  Created by Abrar on 30/05/2025.
 //
 
+import Foundation
+
 struct ArticleEntity: Identifiable {
     let id: Int
     let title: String
@@ -13,4 +15,5 @@ struct ArticleEntity: Identifiable {
     let authors: String?
     let publishedDate: String
     let thumbnailURL: String?
+    let savedDate: Date?
 }
