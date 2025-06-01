@@ -29,7 +29,7 @@ class ArticlesListViewModel: ObservableObject {
             }
         }
     }
-
+    
     @MainActor
     func fetchArticles(period: Int = 7) {
         if shouldClearCache {
@@ -56,6 +56,7 @@ class ArticlesListViewModel: ObservableObject {
             return firstDate > secondDate
         }
     }
+}
 
 // MARK: - Picker Title
 extension ArticlesListViewModel {
