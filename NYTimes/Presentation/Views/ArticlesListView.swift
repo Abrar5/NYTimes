@@ -51,7 +51,9 @@ struct ArticleListView: View {
     
     private var articlesList: some View {
         VStack(spacing: 8) {
-            PickerView(selectedValue: $viewModel.selectedNumber, numberOptions: viewModel.numberOptions)
+            PickerView(pickerTitle: viewModel.getPickerTitle(),
+                       selectedValue: $viewModel.selectedNumber,
+                       numberOptions: viewModel.numberOptions)
                 .padding(.horizontal)
             
             List(viewModel.articles, id: \.id) { article in

@@ -8,16 +8,18 @@
 import SwiftUI
 
 struct PickerView: View {
+    private var pickerTitle: String
     @Binding private var selectedValue: Int
     private var numberOptions: [Int]
     
-    init(selectedValue: Binding<Int>, numberOptions: [Int]) {
+    init(pickerTitle: String, selectedValue: Binding<Int>, numberOptions: [Int]) {
+        self.pickerTitle = pickerTitle
         self._selectedValue = selectedValue
         self.numberOptions = numberOptions
     }
     var body: some View {
         HStack(spacing: 8) {
-            Text("Select Number of Days:")
+            Text(pickerTitle)
                 .foregroundStyle(.secondary)
             Picker("", selection: $selectedValue) {
                 ForEach(numberOptions, id: \.self) { number in

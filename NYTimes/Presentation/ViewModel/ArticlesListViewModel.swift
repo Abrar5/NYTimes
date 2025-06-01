@@ -56,6 +56,12 @@ class ArticlesListViewModel: ObservableObject {
             return firstDate > secondDate
         }
     }
+
+// MARK: - Picker Title
+extension ArticlesListViewModel {
+    func getPickerTitle() -> String {
+        return "Select Number of Days:"
+    }
 }
 
 // MARK: - Reading Text
