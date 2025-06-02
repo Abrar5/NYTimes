@@ -10,7 +10,8 @@ import SwiftUI
 struct ArticleDetailsView: View {
     private var article: ArticleEntity
     @EnvironmentObject private var viewModel: ArticlesListViewModel
-    
+    let speechToText = TextToSpeechUseCase()
+
     init(article: ArticleEntity) {
         self.article = article
     }
@@ -24,7 +25,7 @@ struct ArticleDetailsView: View {
                 Divider()
                 Image(systemName: "speaker")
                     .onTapGesture {
-                        viewModel.readText(article.abstract)
+                        speechToText.readText(article.abstract)
                     }
                 description
                 
