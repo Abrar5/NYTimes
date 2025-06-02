@@ -20,7 +20,7 @@ final class NetworkService: ApiService {
         }
 
         var request = URLRequest(url: url)
-        request.httpMethod = endpoint.method
+        request.httpMethod = endpoint.method.rawValue
         
         let (data, _) = try await URLSession.shared.data(for: request)
         return try JSONDecoder().decode(T.self, from: data)

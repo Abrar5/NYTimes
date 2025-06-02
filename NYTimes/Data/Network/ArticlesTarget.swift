@@ -17,10 +17,10 @@ enum ArticlesTarget: ApiTarget {
         }
     }
     
-    var method: String {
+    var method: HTTPMethod {
         switch self {
         case .getMostViewedArticles:
-            return "GET"
+            return .get
         }
     }
     

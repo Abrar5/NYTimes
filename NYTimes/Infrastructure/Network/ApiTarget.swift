@@ -10,6 +10,6 @@ import Foundation
 protocol ApiTarget {
     var baseURL: String { get }
     var path: String { get }
-    var method: String { get }
+    var method: HTTPMethod { get }
     var urlComponents: URLComponents { get }
 }
