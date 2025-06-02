@@ -8,10 +8,10 @@
 import Foundation
 
 class ArticleRepositoryImplementation: ArticleRepository {
-    private let apiService: DefaultAPIService
+    private let apiService: NetworkService
     private let cache: ArticlesRealmManager
     
-    init(apiService: DefaultAPIService = DefaultAPIService(), cache: ArticlesRealmManager = ArticlesRealmManager()) {
+    init(apiService: NetworkService = NetworkService(), cache: ArticlesRealmManager = ArticlesRealmManager()) {
         self.apiService = apiService
         self.cache = cache
     }
@@ -30,7 +30,7 @@ class ArticleRepositoryImplementation: ArticleRepository {
         }
         
         // Get New Record
-        let result = try await apiService.request(.getMostViewedArticles(days: period), responseType: NYTimesDTO.self)
+        let result = try await apiService.request(ArticlesTarget.getMostViewedArticles(days: period), responseType: NYTimesDTO.self)
         let articles = result.results?.map { ArticleMapper().map(dto: $0) } ?? []
         let cachedObject = articles.map { ArticleObject(article: $0) }
         saveCache(cachedObject)

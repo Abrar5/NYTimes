@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum ArticlesTarget {
+enum ArticlesTarget: ApiTarget {
     case getMostViewedArticles(days: Int)
     
     var path: String {
@@ -18,30 +18,45 @@ enum ArticlesTarget {
     }
     
     var method: String {
-        return "GET"
+        switch self {
+        case .getMostViewedArticles:
+            return "GET"
+        }
     }
     
     var baseURL: String {
-        "https://api.nytimes.com/svc/"
+        switch self {
+        case .getMostViewedArticles:
+            return "https://api.nytimes.com/svc/"
+        }
     }
     
     private var apiKey: String {
-        "tkM1UwG9jpmiA46iMay9LjG2nEwTXlPB"
+        switch self {
+        case .getMostViewedArticles:
+            return "tkM1UwG9jpmiA46iMay9LjG2nEwTXlPB"
+        }
     }
     
     var urlComponents: URLComponents {
-        var components = URLComponents()
-        components.path = self.path
-        components.queryItems = [
-            URLQueryItem(name: "api-key", value: apiKey)
-        ]
-        return components
+        switch self {
+        case .getMostViewedArticles:
+            var components = URLComponents()
+            components.path = self.path
+            components.queryItems = [
+                URLQueryItem(name: "api-key", value: apiKey)
+            ]
+            return components
+        }
     }
     
     var url: URL {
-        guard let finalURL = urlComponents.url else {
-            fatalError("Invalid URL for endpoint: \(self)")
+        switch self {
+        case .getMostViewedArticles:
+            guard let finalURL = urlComponents.url else {
+                fatalError("Invalid URL for endpoint: \(self)")
+            }
+            return finalURL
         }
-        return finalURL
     }
 }

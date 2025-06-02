@@ -1,5 +1,5 @@
 //
-//  DefaultAPIService.swift
+//  NetworkService.swift
 //  NYTimes
 //
 //  Created by Abrar on 31/05/2025.
@@ -7,12 +7,8 @@
 
 import Foundation
 
-protocol APIService {
-    func request<T: Decodable>(_ endpoint: ArticlesTarget, responseType: T.Type) async throws -> T
-}
-
-final class DefaultAPIService: APIService {
-    func request<T: Decodable>(_ endpoint: ArticlesTarget, responseType: T.Type) async throws -> T {
+final class NetworkService: ApiService {
+    func request<T: Decodable>(_ endpoint: ApiTarget, responseType: T.Type) async throws -> T {
         guard var urlComponents = URLComponents(string: endpoint.baseURL + endpoint.path) else {
             throw URLError(.badURL)
         }
