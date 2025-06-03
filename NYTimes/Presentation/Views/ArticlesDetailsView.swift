@@ -18,6 +18,7 @@ struct ArticleDetailsView: View {
     
     var body: some View {
         ScrollView {
+            image
             VStack(alignment: .leading, spacing: 16) {
                 title
                 authors
@@ -65,7 +66,7 @@ struct ArticleDetailsView: View {
                 AsyncImage(url: url) { image in
                     image.resizable()
                         .aspectRatio(contentMode: .fit)
-                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        .ignoresSafeArea(.all)
                 } placeholder: {
                     ProgressView()
                 }
