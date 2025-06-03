@@ -11,7 +11,7 @@ struct ArticleDetailsView: View {
     private var article: ArticleEntity
     @EnvironmentObject private var viewModel: ArticlesListViewModel
     let speechToText = TextToSpeechUseCase()
-
+    
     init(article: ArticleEntity) {
         self.article = article
     }
@@ -28,17 +28,12 @@ struct ArticleDetailsView: View {
                         speechToText.readText(article.abstract)
                     }
                 description
-                
-                Link("Read full article", destination: URL(string: article.url)!)
-                    .font(.headline)
-                    .foregroundColor(.blue)
-                    .padding(.top)
-                
-                image
+                readFullArticle
             }
             .padding()
         }
         .navigationTitle(article.title)
+        .navigationBarTitleDisplayMode(.inline)
     }
     
     private var title: some View {
@@ -76,5 +71,12 @@ struct ArticleDetailsView: View {
                 }
             }
         }
+    }
+    
+    private var readFullArticle: some View {
+        Link("Read Full Article", destination: URL(string: article.url)!)
+            .font(.headline)
+            .foregroundColor(.blue)
+            .padding(.top)
     }
 }

@@ -43,5 +43,4 @@ final class FetchMostPopularArticlesUseCaseTest: XCTestCase {
         }
         expect.fulfill()
     }
-    
 }
