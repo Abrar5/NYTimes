@@ -17,6 +17,7 @@
   - Clean Architecture and MVVM pattern.
 
 # Screenshots:
+* Light Mode:
   - List View:
     
     <img src="NYTimes/Assets.xcassets/OutputScreenshots/ListView.imageset/ListView.png" alt="List View" width="300"/>
@@ -24,3 +25,13 @@
   - Details View:
   
     <img src="NYTimes/Assets.xcassets/OutputScreenshots/DetailsView.imageset/DetailsView.png" alt="Details View" width="300"/>
+
+ * Dark Mode:
+  - List View:
+    
+    <img src="NYTimes/Assets.xcassets/OutputScreenshots/ListView_DarkMode.imageset/ListView_DarkMode.png" alt="List View" width="300"/>
+
+  - Details View:
+  
+    <img src="NYTimes/Assets.xcassets/OutputScreenshots/DetailsView_DarkMode.imageset/DetailsView_DarkMode.png" alt="Details View" width="300"/>
+
