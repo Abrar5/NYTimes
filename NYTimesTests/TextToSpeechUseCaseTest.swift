@@ -27,14 +27,12 @@ final class TextToSpeechUseCaseTest: XCTestCase {
     func testReadText_ReadText() {
         sut.readText("Hello world")
         let readText = mockSynth.readText("Hello world")
-        
         XCTAssertEqual(readText, "Speech started.")
     }
     
     func testReadText_startSpeaking() {
         sut.readText("Hello world")
         let readText = mockSynth.readText("Hello world")
-
         XCTAssertEqual(readText, "Speech started.")
     }
     
