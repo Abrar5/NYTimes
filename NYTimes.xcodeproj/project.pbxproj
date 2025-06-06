@@ -49,6 +49,23 @@
 		20A07AA92DEB0BC500E8F496 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		207810382DF3706F0086123C /* Exceptions for "NYTimesTests" folder in "NYTimes" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Mock/mostViewed.json,
+			);
+			target = 205212992DE7A567009E5FA7 /* NYTimes */;
+		};
+		207810392DF3706F0086123C /* Exceptions for "NYTimesTests" folder in "NYTimesTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Mock/mostViewed.json,
+			);
+			target = 205212A72DE7A568009E5FA7 /* NYTimesTests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		2052129C2DE7A567009E5FA7 /* NYTimes */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
@@ -57,6 +74,10 @@
 		};
 		205212AB2DE7A568009E5FA7 /* NYTimesTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				207810382DF3706F0086123C /* Exceptions for "NYTimesTests" folder in "NYTimes" target */,
+				207810392DF3706F0086123C /* Exceptions for "NYTimesTests" folder in "NYTimesTests" target */,
+			);
 			path = NYTimesTests;
 			sourceTree = "<group>";
 		};
