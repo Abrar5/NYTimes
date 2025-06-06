@@ -31,6 +31,13 @@ final class ArticlesListViewModelTests: XCTestCase {
         expect.fulfill()
     }
     
+    @MainActor func testFetchArticles_fail() {
+        let expect = XCTestExpectation(description: "Fetch Atrticles_Failure")
+        let result: () = sut.fetchArticles(period: 2)
+        XCTAssertNotNil(result)
+        expect.fulfill()
+    }
+    
     func testGetSortArticlesByDate() {
         let expect = XCTestExpectation(description: "Get Sorted Articles By Date")
         let result = sut.getSortArticlesByDate(articles)

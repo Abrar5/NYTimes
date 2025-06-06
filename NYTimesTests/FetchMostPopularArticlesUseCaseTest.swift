@@ -22,18 +22,19 @@ final class FetchMostPopularArticlesUseCaseTest: XCTestCase {
     }
     
     func testFetchArticles_success() async {
-        let expect = XCTestExpectation(description: "Fetch Most Popular Articles Use Case")
+        let expect = XCTestExpectation(description: "Fetch Most Popular Articles Use Case_success")
         do {
             let result = try await sut.execute()
             XCTAssertNotNil(result)
         } catch {
             XCTFail("Failed to fetch most popular articles")
+            XCTAssertNotNil(error.localizedDescription)
         }
         expect.fulfill()
     }
     
     func testFetchArticles_fail() async {
-        let expect = XCTestExpectation(description: "Fetch Most Popular Articles Use Case")
+        let expect = XCTestExpectation(description: "Fetch Most Popular Articles Use Case_fail")
         do {
             let result = try await sut.execute(period: 0)
             print(result)
