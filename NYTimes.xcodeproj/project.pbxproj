@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		2052130A2DE9EB9D009E5FA7 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 205213092DE9EB9D009E5FA7 /* RealmSwift */; };
 		2052130B2DE9EB9D009E5FA7 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 205213092DE9EB9D009E5FA7 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		207810B52DFCE49C0086123C /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 207810B42DFCE49C0086123C /* WidgetKit.framework */; };
+		207810B72DFCE49C0086123C /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 207810B62DFCE49C0086123C /* SwiftUI.framework */; };
+		207810C82DFCE49D0086123C /* NYTimesWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 207810B32DFCE49C0086123C /* NYTimesWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		207810D32DFCF1560086123C /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 207810D22DFCF1560086123C /* RealmSwift */; };
+		207810D42DFCF1560086123C /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 207810D22DFCF1560086123C /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +31,13 @@
 			remoteGlobalIDString = 205212992DE7A567009E5FA7;
 			remoteInfo = NYTimes;
 		};
+		207810C62DFCE49D0086123C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 205212922DE7A567009E5FA7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 207810B22DFCE49C0086123C;
+			remoteInfo = NYTimesWidgetExtension;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,12 +52,38 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		207810C92DFCE49D0086123C /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				207810C82DFCE49D0086123C /* NYTimesWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		207810D52DFCF1560086123C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				207810D42DFCF1560086123C /* RealmSwift in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2052129A2DE7A567009E5FA7 /* NYTimes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NYTimes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		205212A82DE7A568009E5FA7 /* NYTimesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NYTimesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		205212B22DE7A568009E5FA7 /* NYTimesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NYTimesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		207810B32DFCE49C0086123C /* NYTimesWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NYTimesWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		207810B42DFCE49C0086123C /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		207810B62DFCE49C0086123C /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		207810CE2DFCEDD10086123C /* NYTimesWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NYTimesWidgetExtension.entitlements; sourceTree = "<group>"; };
 		20A07AA92DEB0BC500E8F496 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,11 +102,32 @@
 			);
 			target = 205212A72DE7A568009E5FA7 /* NYTimesTests */;
 		};
+		207810CD2DFCE49D0086123C /* Exceptions for "NYTimesWidget" folder in "NYTimesWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 207810B22DFCE49C0086123C /* NYTimesWidgetExtension */;
+		};
+		207810D02DFCEEA70086123C /* Exceptions for "NYTimes" folder in "NYTimesWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Data/Persistence/ArticleObject.swift,
+				Data/Persistence/ArticleObjectMapper.swift,
+				Data/Persistence/ArticlesRealmManager.swift,
+				Domain/Entity/ArticleEntity.swift,
+				"Extensions/String+Extension.swift",
+			);
+			target = 207810B22DFCE49C0086123C /* NYTimesWidgetExtension */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		2052129C2DE7A567009E5FA7 /* NYTimes */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				207810D02DFCEEA70086123C /* Exceptions for "NYTimes" folder in "NYTimesWidgetExtension" target */,
+			);
 			path = NYTimes;
 			sourceTree = "<group>";
 		};
@@ -84,6 +143,14 @@
 		205212B52DE7A568009E5FA7 /* NYTimesUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = NYTimesUITests;
+			sourceTree = "<group>";
+		};
+		207810B82DFCE49C0086123C /* NYTimesWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				207810CD2DFCE49D0086123C /* Exceptions for "NYTimesWidget" folder in "NYTimesWidgetExtension" target */,
+			);
+			path = NYTimesWidget;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -111,16 +178,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		207810B02DFCE49C0086123C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				207810D32DFCF1560086123C /* RealmSwift in Frameworks */,
+				207810B72DFCE49C0086123C /* SwiftUI.framework in Frameworks */,
+				207810B52DFCE49C0086123C /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		205212912DE7A567009E5FA7 = {
 			isa = PBXGroup;
 			children = (
+				207810CE2DFCEDD10086123C /* NYTimesWidgetExtension.entitlements */,
 				20A07AA92DEB0BC500E8F496 /* Info.plist */,
 				2052129C2DE7A567009E5FA7 /* NYTimes */,
 				205212AB2DE7A568009E5FA7 /* NYTimesTests */,
 				205212B52DE7A568009E5FA7 /* NYTimesUITests */,
+				207810B82DFCE49C0086123C /* NYTimesWidget */,
 				205213042DE9EB99009E5FA7 /* Frameworks */,
 				2052129B2DE7A567009E5FA7 /* Products */,
 			);
@@ -132,6 +211,7 @@
 				2052129A2DE7A567009E5FA7 /* NYTimes.app */,
 				205212A82DE7A568009E5FA7 /* NYTimesTests.xctest */,
 				205212B22DE7A568009E5FA7 /* NYTimesUITests.xctest */,
+				207810B32DFCE49C0086123C /* NYTimesWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -139,6 +219,8 @@
 		205213042DE9EB99009E5FA7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				207810B42DFCE49C0086123C /* WidgetKit.framework */,
+				207810B62DFCE49C0086123C /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -154,10 +236,12 @@
 				205212972DE7A567009E5FA7 /* Frameworks */,
 				205212982DE7A567009E5FA7 /* Resources */,
 				205213082DE9EB99009E5FA7 /* Embed Frameworks */,
+				207810C92DFCE49D0086123C /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				207810C72DFCE49D0086123C /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				2052129C2DE7A567009E5FA7 /* NYTimes */,
@@ -216,6 +300,30 @@
 			productReference = 205212B22DE7A568009E5FA7 /* NYTimesUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		207810B22DFCE49C0086123C /* NYTimesWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 207810CC2DFCE49D0086123C /* Build configuration list for PBXNativeTarget "NYTimesWidgetExtension" */;
+			buildPhases = (
+				207810AF2DFCE49C0086123C /* Sources */,
+				207810B02DFCE49C0086123C /* Frameworks */,
+				207810B12DFCE49C0086123C /* Resources */,
+				207810D52DFCF1560086123C /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				207810B82DFCE49C0086123C /* NYTimesWidget */,
+			);
+			name = NYTimesWidgetExtension;
+			packageProductDependencies = (
+				207810D22DFCF1560086123C /* RealmSwift */,
+			);
+			productName = NYTimesWidgetExtension;
+			productReference = 207810B32DFCE49C0086123C /* NYTimesWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -236,6 +344,9 @@
 					205212B12DE7A568009E5FA7 = {
 						CreatedOnToolsVersion = 16.3;
 						TestTargetID = 205212992DE7A567009E5FA7;
+					};
+					207810B22DFCE49C0086123C = {
+						CreatedOnToolsVersion = 16.3;
 					};
 				};
 			};
@@ -259,6 +370,7 @@
 				205212992DE7A567009E5FA7 /* NYTimes */,
 				205212A72DE7A568009E5FA7 /* NYTimesTests */,
 				205212B12DE7A568009E5FA7 /* NYTimesUITests */,
+				207810B22DFCE49C0086123C /* NYTimesWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -279,6 +391,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		205212B02DE7A568009E5FA7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		207810B12DFCE49C0086123C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -309,6 +428,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		207810AF2DFCE49C0086123C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -321,6 +447,11 @@
 			isa = PBXTargetDependency;
 			target = 205212992DE7A567009E5FA7 /* NYTimes */;
 			targetProxy = 205212B32DE7A568009E5FA7 /* PBXContainerItemProxy */;
+		};
+		207810C72DFCE49D0086123C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 207810B22DFCE49C0086123C /* NYTimesWidgetExtension */;
+			targetProxy = 207810C62DFCE49D0086123C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -451,6 +582,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = News;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -490,6 +622,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = News;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -523,6 +656,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PBKV4LY323;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				MACOSX_DEPLOYMENT_TARGET = 15.3;
@@ -545,6 +679,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PBKV4LY323;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				MACOSX_DEPLOYMENT_TARGET = 15.3;
@@ -566,6 +701,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PBKV4LY323;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				MACOSX_DEPLOYMENT_TARGET = 15.3;
@@ -587,6 +723,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PBKV4LY323;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				MACOSX_DEPLOYMENT_TARGET = 15.3;
@@ -600,6 +737,67 @@
 				TARGETED_DEVICE_FAMILY = "1,2,7";
 				TEST_TARGET_NAME = NYTimes;
 				XROS_DEPLOYMENT_TARGET = 2.4;
+			};
+			name = Release;
+		};
+		207810CA2DFCE49D0086123C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = NYTimesWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PBKV4LY323;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NYTimesWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = NYTimesWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = NYTimes.NYTimes.NYTimesWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		207810CB2DFCE49D0086123C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = NYTimesWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PBKV4LY323;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NYTimesWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = NYTimesWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = NYTimes.NYTimes.NYTimesWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -642,6 +840,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		207810CC2DFCE49D0086123C /* Build configuration list for PBXNativeTarget "NYTimesWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				207810CA2DFCE49D0086123C /* Debug */,
+				207810CB2DFCE49D0086123C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -657,6 +864,11 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		205213092DE9EB9D009E5FA7 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 205212FF2DE9EAF5009E5FA7 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+		207810D22DFCF1560086123C /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 205212FF2DE9EAF5009E5FA7 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
