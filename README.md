@@ -33,15 +33,15 @@
     <img src="NYTimesWidget/Assets.xcassets/Screenshots/LatestArticleWidget.imageset/LatestArticleWidget.png" alt="LatestArticleWidget" width="300"/>
 
  * Dark Mode:
-  - List View:
+    - List View:
     
     <img src="NYTimes/Assets.xcassets/OutputScreenshots/ListView_DarkMode.imageset/ListView_DarkMode.png" alt="List View" width="300"/>
 
-  - Details View:
+    - Details View:
   
     <img src="NYTimes/Assets.xcassets/OutputScreenshots/DetailsView_DarkMode.imageset/DetailsView_DarkMode.png" alt="Details View" width="300"/>
 
-  - Large Widget:
+    - Large Widget:
   
     <img src="NYTimesWidget/Assets.xcassets/Screenshots/LatestArticleWidget_DarkMode.imageset/LatestArticleWidget_DarkMode.png" alt="LatestArticleWidget" width="300"/>
 
