@@ -5,6 +5,7 @@
   - Text-to-speech (TTS) functionality in the article details.
   - Navigate to the website to read the whole articles.
   - Local caching with Realm (the cache is valid for 1 day).
+  - Large widget to show the latest article.
   - Unit tests for core logic.
 
 # Requirements:
@@ -26,6 +27,11 @@
   
     <img src="NYTimes/Assets.xcassets/OutputScreenshots/DetailsView.imageset/DetailsView.png" alt="Details View" width="300"/>
 
+    
+  - Large Widget:
+  
+    <img src="NYTimesWidget/Assets.xcassets/Screenshots/LatestArticleWidget.imageset/LatestArticleWidget.png" alt="LatestArticleWidget" width="300"/>
+
  * Dark Mode:
   - List View:
     
@@ -34,4 +40,9 @@
   - Details View:
   
     <img src="NYTimes/Assets.xcassets/OutputScreenshots/DetailsView_DarkMode.imageset/DetailsView_DarkMode.png" alt="Details View" width="300"/>
+
+  - Large Widget:
+  
+    <img src="NYTimesWidget/Assets.xcassets/Screenshots/LatestArticleWidget_DarkMode.imageset/LatestArticleWidget_DarkMode.png" alt="LatestArticleWidget" width="300"/>
+
 
