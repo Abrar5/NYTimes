@@ -17,7 +17,7 @@ class ArticleRepositoryImplementation: ArticleRepository {
     }
     
     func fetchMostViewedArticles(period: Int) async throws -> [ArticleEntity] {
-        let cachedArticles = await self.cache.load()
+        let cachedArticles = self.cache.load()
         
         // Check current cache validity
         if !cachedArticles.isEmpty, let savedRecordDate = cachedArticles.first?.savedDate {
