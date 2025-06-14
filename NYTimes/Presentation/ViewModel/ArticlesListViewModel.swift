@@ -11,9 +11,18 @@ import AVFAudio
 class ArticlesListViewModel: ObservableObject {
     @Published var articles: [ArticleEntity] = []
     @Published var errorMessage: String?
-    @Published var selectedNumber: Int = 7
+    @Published var selectedNumber: Int = 7 {
+        didSet {
+            savePeriod(selectedNumber)
+        }
+    }
+    
     @Published var numberOptions: [Int] = [1, 7, 30]
     var shouldClearCache: Bool = false
+    
+    init() {
+        selectedNumber = UserDefaults.standard.object(forKey: "selectedPeriod") as? Int ?? 7
+    }
     
     @MainActor
     private func getArticles(period: Int = 7) {
@@ -56,9 +65,13 @@ class ArticlesListViewModel: ObservableObject {
     }
 }
 
-// MARK: - Picker Title
+// MARK: - Picker
 extension ArticlesListViewModel {
     func getPickerTitle() -> String {
         return "Select Number of Days:"
+    }
+    
+    private func savePeriod(_ value: Int) {
+        UserDefaults.standard.set(value, forKey: "selectedPeriod")
     }
 }
