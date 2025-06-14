@@ -5,6 +5,7 @@
   - Text-to-speech (TTS) functionality in the article details.
   - Navigate to the website to read the whole articles.
   - Local caching with Realm (the cache is valid for 1 day).
+  - Store the user's selection for a specified duration — 1 day, 7 days, or 30 days.
   - Large widget to show the latest article.
   - Unit tests for core logic.
 
