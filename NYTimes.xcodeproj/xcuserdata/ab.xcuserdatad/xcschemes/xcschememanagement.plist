@@ -4,15 +4,43 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>GettingStarted (Playground).xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 		<key>NYTimes.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>NYTimesTests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 		<key>NYTimesWidgetExtension.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>205212992DE7A567009E5FA7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>205212A72DE7A568009E5FA7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>207810B22DFCE49C0086123C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
