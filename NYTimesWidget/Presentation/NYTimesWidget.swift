@@ -13,7 +13,13 @@ struct NYTimesWidget: Widget {
     
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: NYTimesWidgetProvider()) { entry in
-            NYTimesWidgetEntryView(entry: entry)
+            if let latestArticle = entry.latestArticle {
+                NYTimesWidgetEntryView(latestArticle: latestArticle)
+            } else if !entry.isDataLoaded {
+                Text("The latest article is not yet available.")
+            } else {
+                Text("Loading the latest article...")
+            }
         }
         .configurationDisplayName("Latest Article")
         .description("Shows the most recent article.")

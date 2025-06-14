@@ -10,4 +10,5 @@ import WidgetKit
 struct LatestArticleEntry: TimelineEntry {
     let date: Date
     let latestArticle: ArticleEntity?
+    let isDataLoaded: Bool
 }
